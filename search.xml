@@ -446,7 +446,7 @@
       <link href="/2023/06/02/Python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
       <url>/2023/06/02/Python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
       
-        <content type="html"><![CDATA[<h1 id="python的正则学习"><a href="#python的正则学习" class="headerlink" title="python的正则学习"></a>python的正则学习</h1><h3 id="运用一"><a href="#运用一" class="headerlink" title="运用一"></a>运用一</h3><p>已知字符串a&#x3D;“aAsmr3idd4bgs7Dlsf9eAF”</p><p>（1）请将a字符串中的数字取出，并输出为一个新的字符串，要求使用正则表达式完成；</p><p>（2）请将字符串a中的大写字母换为小写，小写字母换成大写。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">a=<span class="string">&quot;aAsmr3idd4bgs7Dlsf9eAF&quot;</span></span><br><span class="line">lst=re.<span class="built_in">compile</span>(<span class="string">r&#x27;\d+&#x27;</span>)</span><br><span class="line">st=lst.findall(a)</span><br><span class="line">st1=<span class="string">&#x27;&#x27;</span>.join(i <span class="keyword">for</span> i <span class="keyword">in</span> st)</span><br><span class="line"><span class="built_in">print</span>(st1)</span><br><span class="line"></span><br><span class="line">result = re.sub(<span class="string">r&#x27;[a-zA-Z]&#x27;</span>, <span class="keyword">lambda</span> x: x.group(<span class="number">0</span>).upper() <span class="keyword">if</span> x.group(<span class="number">0</span>).islower() <span class="keyword">else</span> x.group(<span class="number">0</span>).lower(), a)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure><p>第一小问中规中矩，只要求匹配数字。第二个小问难就难在大小写转换，这里可以灵活运用关键字：lambda，<strong>lambda</strong> 函数通常会作为参数传递给高阶函数，例如 <strong><code>map()</code>、<code>filter()</code>、<code>reduce()</code></strong> 等函数，用于对序列进行转换、筛选、累积等操作。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">lambda</span> arguments: expression</span><br></pre></td></tr></table></figure><p>arguments是函数的参数列表，用逗号分隔；experession是函数的返回值，也是一个表达式。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">result = re.sub(<span class="string">r&#x27;[a-zA-Z]&#x27;</span>, <span class="keyword">lambda</span> x: x.group(<span class="number">0</span>).upper() <span class="keyword">if</span> x.group(<span class="number">0</span>).islower() <span class="keyword">else</span> x.group(<span class="number">0</span>).lower(), a)</span><br></pre></td></tr></table></figure><p>其中这句代码的含义就是将正则匹配的内容进行判断，如果是大写，则转变为小写，如果是小写，则转便为大写。</p><h3 id="运用二"><a href="#运用二" class="headerlink" title="运用二"></a>运用二</h3><p>根据下列字符串构成规律写出正则表达式，实现对测试字符串的搜索。假设待搜索字符串为：小明的身份证号码是 1234567890111，手机号码是 13508826666，私人邮箱是 <a href="mailto:&#100;&#97;&#105;&#x6c;&#67;&#77;&#x40;&#x6f;&#117;&#x74;&#108;&#111;&#111;&#x6b;&#x2e;&#99;&#111;&#109;">&#100;&#97;&#105;&#x6c;&#67;&#77;&#x40;&#x6f;&#117;&#x74;&#108;&#111;&#111;&#x6b;&#x2e;&#99;&#111;&#109;</a>,公司邮箱是 <a href="mailto:&#x31;&#x32;&#51;&#x34;&#x35;&#54;&#x40;&#113;&#113;&#x2e;&#x63;&#111;&#109;">&#x31;&#x32;&#51;&#x34;&#x35;&#54;&#x40;&#113;&#113;&#x2e;&#x63;&#111;&#109;</a> (1)从字符串中提取合法的18位身份证号码；(2)从字符串中提取合法的E-mail地址；(3)从字符串中提取合法的11位手机号码。</p><p>我们先分析要匹配的字符串，先分析身份证号码。总共由18位数字构成，前6位表示地区的特别号码，第7、8、9、10位为年份，且7、8位应为19或者20（因为有身份证的人都是19多少年或者20多少年），第11、12位表示月份，则11与12位数字构成的月份只能在01-12之间。第13，14位表示日期，则两位数必须小于31。15、16、17表示任意的3位数字，18位数必须是数字或者字母x。</p><p>根据分析就可以开始构造正则表达式：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">r&#x27;\b[1-9]\d&#123;5&#125;(19|20)\d&#123;2&#125;(0\d|1[0-2])([0-2]\d|3[0-1])\d&#123;3&#125;[0-9X]\b&#x27;</span></span><br></pre></td></tr></table></figure><p>电话号码不多说，特别基础，如果电话号码弄不来的同学建议再回去看下知识点。</p><p>编写程序：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">lst=<span class="string">&#x27;小明的身份证号码是 25364720210604002X,手机号码是 13508826666,私人邮箱是 dailCM@outlook.com,公司邮箱是 123456@qq.com&#x27;</span></span><br><span class="line">id_pattern = <span class="string">r&#x27;\b[1-9]\d&#123;5&#125;(19|20)\d&#123;2&#125;(0\d|1[0-2])([0-2]\d|3[0-1])\d&#123;3&#125;[0-9X]\b&#x27;</span></span><br><span class="line">id_match = re.search(id_pattern, lst)</span><br><span class="line"><span class="keyword">if</span> id_match:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;身份证号码：&quot;</span>, id_match.group())</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未找到身份证号码&quot;</span>)</span><br><span class="line"></span><br><span class="line">email_pattern = <span class="string">r&#x27;\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]&#123;2,&#125;\b&#x27;</span></span><br><span class="line">email_match = re.search(email_pattern, lst)</span><br><span class="line"><span class="keyword">if</span> email_match:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;E-mail 地址：&quot;</span>, email_match.group())</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未找到 E-mail 地址&quot;</span>)</span><br><span class="line"></span><br><span class="line">phone_pattern = <span class="string">r&#x27;\b1[3-9]\d&#123;9&#125;\b&#x27;</span></span><br><span class="line">phone_match = re.search(phone_pattern, lst)</span><br><span class="line"><span class="keyword">if</span> phone_match:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;电话号码：&quot;</span>, phone_match.group())</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未找到电话号码&quot;</span>)</span><br></pre></td></tr></table></figure><p>运行结果：</p><p><img src="/../imgs/Python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/1.png"></p><p>这样正则表达式的运用就结束啦。 </p><p>正则表达式不唯一，慢慢分析就会有结果，最好的学习方式就是不断练习。</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="python的正则学习"><a href="#python的正则学习" class="headerlink" title="python的正则学习"></a>python的正则学习</h1><h3 id="运用一"><a href="#运用一" class="headerlink" title="运用一"></a>运用一</h3><p>已知字符串a&#x3D;“aAsmr3idd4bgs7Dlsf9eAF”</p><p>（1）请将a字符串中的数字取出，并输出为一个新的字符串，要求使用正则表达式完成；</p><p>（2）请将字符串a中的大写字母换为小写，小写字母换成大写。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">a=<span class="string">&quot;aAsmr3idd4bgs7Dlsf9eAF&quot;</span></span><br><span class="line">lst=re.<span class="built_in">compile</span>(<span class="string">r&#x27;\d+&#x27;</span>)</span><br><span class="line">st=lst.findall(a)</span><br><span class="line">st1=<span class="string">&#x27;&#x27;</span>.join(i <span class="keyword">for</span> i <span class="keyword">in</span> st)</span><br><span class="line"><span class="built_in">print</span>(st1)</span><br><span class="line"></span><br><span class="line">result = re.sub(<span class="string">r&#x27;[a-zA-Z]&#x27;</span>, <span class="keyword">lambda</span> x: x.group(<span class="number">0</span>).upper() <span class="keyword">if</span> x.group(<span class="number">0</span>).islower() <span class="keyword">else</span> x.group(<span class="number">0</span>).lower(), a)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure><p>第一小问中规中矩，只要求匹配数字。第二个小问难就难在大小写转换，这里可以灵活运用关键字：lambda，<strong>lambda</strong> 函数通常会作为参数传递给高阶函数，例如 <strong><code>map()</code>、<code>filter()</code>、<code>reduce()</code></strong> 等函数，用于对序列进行转换、筛选、累积等操作。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">lambda</span> arguments: expression</span><br></pre></td></tr></table></figure><p>arguments是函数的参数列表，用逗号分隔；experession是函数的返回值，也是一个表达式。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">result = re.sub(<span class="string">r&#x27;[a-zA-Z]&#x27;</span>, <span class="keyword">lambda</span> x: x.group(<span class="number">0</span>).upper() <span class="keyword">if</span> x.group(<span class="number">0</span>).islower() <span class="keyword">else</span> x.group(<span class="number">0</span>).lower(), a)</span><br></pre></td></tr></table></figure><p>其中这句代码的含义就是将正则匹配的内容进行判断，如果是大写，则转变为小写，如果是小写，则转便为大写。</p><h3 id="运用二"><a href="#运用二" class="headerlink" title="运用二"></a>运用二</h3><p>根据下列字符串构成规律写出正则表达式，实现对测试字符串的搜索。假设待搜索字符串为：小明的身份证号码是 1234567890111，手机号码是 13508826666，私人邮箱是 <a href="mailto:&#100;&#x61;&#105;&#108;&#67;&#x4d;&#x40;&#x6f;&#x75;&#116;&#x6c;&#111;&#x6f;&#x6b;&#x2e;&#x63;&#x6f;&#x6d;">&#100;&#x61;&#105;&#108;&#67;&#x4d;&#x40;&#x6f;&#x75;&#116;&#x6c;&#111;&#x6f;&#x6b;&#x2e;&#x63;&#x6f;&#x6d;</a>,公司邮箱是 <a href="mailto:&#49;&#50;&#51;&#52;&#53;&#x36;&#x40;&#113;&#113;&#46;&#99;&#x6f;&#x6d;">&#49;&#50;&#51;&#52;&#53;&#x36;&#x40;&#113;&#113;&#46;&#99;&#x6f;&#x6d;</a> (1)从字符串中提取合法的18位身份证号码；(2)从字符串中提取合法的E-mail地址；(3)从字符串中提取合法的11位手机号码。</p><p>我们先分析要匹配的字符串，先分析身份证号码。总共由18位数字构成，前6位表示地区的特别号码，第7、8、9、10位为年份，且7、8位应为19或者20（因为有身份证的人都是19多少年或者20多少年），第11、12位表示月份，则11与12位数字构成的月份只能在01-12之间。第13，14位表示日期，则两位数必须小于31。15、16、17表示任意的3位数字，18位数必须是数字或者字母x。</p><p>根据分析就可以开始构造正则表达式：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">r&#x27;\b[1-9]\d&#123;5&#125;(19|20)\d&#123;2&#125;(0\d|1[0-2])([0-2]\d|3[0-1])\d&#123;3&#125;[0-9X]\b&#x27;</span></span><br></pre></td></tr></table></figure><p>电话号码不多说，特别基础，如果电话号码弄不来的同学建议再回去看下知识点。</p><p>编写程序：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">lst=<span class="string">&#x27;小明的身份证号码是 25364720210604002X,手机号码是 13508826666,私人邮箱是 dailCM@outlook.com,公司邮箱是 123456@qq.com&#x27;</span></span><br><span class="line">id_pattern = <span class="string">r&#x27;\b[1-9]\d&#123;5&#125;(19|20)\d&#123;2&#125;(0\d|1[0-2])([0-2]\d|3[0-1])\d&#123;3&#125;[0-9X]\b&#x27;</span></span><br><span class="line">id_match = re.search(id_pattern, lst)</span><br><span class="line"><span class="keyword">if</span> id_match:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;身份证号码：&quot;</span>, id_match.group())</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未找到身份证号码&quot;</span>)</span><br><span class="line"></span><br><span class="line">email_pattern = <span class="string">r&#x27;\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]&#123;2,&#125;\b&#x27;</span></span><br><span class="line">email_match = re.search(email_pattern, lst)</span><br><span class="line"><span class="keyword">if</span> email_match:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;E-mail 地址：&quot;</span>, email_match.group())</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未找到 E-mail 地址&quot;</span>)</span><br><span class="line"></span><br><span class="line">phone_pattern = <span class="string">r&#x27;\b1[3-9]\d&#123;9&#125;\b&#x27;</span></span><br><span class="line">phone_match = re.search(phone_pattern, lst)</span><br><span class="line"><span class="keyword">if</span> phone_match:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;电话号码：&quot;</span>, phone_match.group())</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未找到电话号码&quot;</span>)</span><br></pre></td></tr></table></figure><p>运行结果：</p><p><img src="/../imgs/Python-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/1.png"></p><p>这样正则表达式的运用就结束啦。 </p><p>正则表达式不唯一，慢慢分析就会有结果，最好的学习方式就是不断练习。</p>]]></content>
       
       
       <categories>
@@ -495,17 +495,6 @@
     
     
     <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -517,9 +506,9 @@
     
     
     <entry>
-      <title>留言板</title>
-      <link href="/comments/index.html"/>
-      <url>/comments/index.html</url>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -539,17 +528,6 @@
     
     
     <entry>
-      <title>音乐</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>电影</title>
       <link href="/movies/index.html"/>
       <url>/movies/index.html</url>
@@ -561,9 +539,31 @@
     
     
     <entry>
+      <title>音乐</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>留言板</title>
+      <link href="/comments/index.html"/>
+      <url>/comments/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
