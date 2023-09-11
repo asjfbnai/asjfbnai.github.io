@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>my blog</title><meta name="author" content="fp.close()"><meta name="copyright" content="fp.close()"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="演示博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="my blog">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="my blog">
+<meta property="og:description" content="演示博客">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/avatar.jpg">
+<meta property="article:author" content="fp.close()">
+<meta property="article:tag" content="演示">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'my blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-09-11 14:50:23'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/bj.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="my blog"><span class="site-name">my blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">my blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/asjfbnai" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2023/09/10/2023/" title="第一篇文章"><img class="post-bg" src="/img/04.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第一篇文章"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/09/10/2023/" title="第一篇文章">第一篇文章</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-09-10T09:11:55.612Z" title="Created 2023-09-10 17:11:55">2023-09-10</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-09-10T09:00:00.000Z" title="Updated 2023-09-10 17:00:00">2023-09-10</time></span></div><div class="content">这是我的第一篇文章</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/08/12/web%E6%B8%97%E9%80%8F-php/" title="web渗透"><img class="post-bg" src="/img/05.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="web渗透"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/08/12/web%E6%B8%97%E9%80%8F-php/" title="web渗透">web渗透</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-08-12T06:21:51.000Z" title="Created 2023-08-12 14:21:51">2023-08-12</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-08-13T09:19:45.391Z" title="Updated 2023-08-13 17:19:45">2023-08-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web/">Web</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%B8%97%E9%80%8F/">渗透</a></span></div><div class="content">Web渗透的简单流程1、搭建靶机本次红队的靶场采用vulstack红队评估的靶场，从信息收集到控制DMZ区域的WEB服务器，接着联合MSF和CS控制内网机器，随后通过搭建隧道，配置代理，MS17010等攻击内网机器，并且控制域控，让你不在局限于WEB漏洞挖掘和打点技术，全身心的体验完整的攻击流程，提高自己的认知和眼界。
+官网：靶场地址：http://vulnstack.qiyuanxuetang.net/vuln/
+我们采用的是 win7 x64 操作系统
+1&gt;&gt;配置靶场网卡模拟web服务器设置虚拟机网络，手动添加VMnet3和VMnet4，具体设置如下
+
+
+设置完成后点击确定。打开靶场虚拟机设置，找到网络适配器，两个适配器都改为自定义，并选择好刚才添加的网络如下
+
+
+完成后打开靶场，找到网络共享中心开始设置两网卡的ipv4属性如下图
+VMnet3
+
+VMnet4
+
+注：VMnet4一定要设置DNS
+设置完成后，重启虚拟机就可以开始攻击了。
+2、 开始渗透1&gt;&gt;信息收集首先我们已知目标的ip:192.168.111.128。因为是自己搭建的靶机就不去收集子域名了 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/07/18/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95-%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D/" title="渗透测试-永恒之蓝"><img class="post-bg" src="/img/05.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="渗透测试-永恒之蓝"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/07/18/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95-%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D/" title="渗透测试-永恒之蓝">渗透测试-永恒之蓝</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-07-18T04:03:07.000Z" title="Created 2023-07-18 12:03:07">2023-07-18</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-07-18T10:00:02.054Z" title="Updated 2023-07-18 18:00:02">2023-07-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">Web渗透测试</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D/">永恒之蓝</a></span></div><div class="content">攻击靶场：windows7操作系统
+渗透工具：kali操作系统
+windows 永恒之蓝攻击​       永恒之蓝(EternalBlue)是由美国国家安全局开发的漏洞利用程序,对应微软漏洞编号ms17-010。该漏洞利用工具由一个名为”影子经济人”（Shadow Brokers）的神秘黑客组织于2017年4月14日公开的利用工具之一，该漏洞利用工具针对TCP 445端口(Server Message Block&#x2F;SMB)的文件分享协议进行攻击，攻击成功后将被用来传播病毒木马。由于利用永恒之蓝漏洞利用工具进行传播病毒木马事件多，影响特大，因此很多时候默认将ms17-010漏洞称为“永恒之蓝”。
+​        扫描目标端口，如果存在445端口，则证明可能存在永恒之蓝漏洞，可使用工具msf进行探查。
+第一步，扫描目标端口打开msf工具后，使用nmap工具扫描搭建好的靶机端口。
+指令：
+123msfconsole   #打开工具db_status    #检查数据库连接状态。msf使用的数据库是 postgresqlnmap 192.168.108.131    #扫描端口
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/06/17/SQL-sqli/" title="SQL-sqli"><img class="post-bg" src="/img/06.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SQL-sqli"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/17/SQL-sqli/" title="SQL-sqli">SQL-sqli</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-06-17T09:10:41.000Z" title="Created 2023-06-17 17:10:41">2023-06-17</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-06-17T10:28:41.073Z" title="Updated 2023-06-17 18:28:41">2023-06-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web/">Web</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/SQL%E6%B3%A8%E5%85%A5/">SQL注入</a></span></div><div class="content">Less1打开环境，页面显示：
+
+要求我们传入 id的值。
+我们首先先传入id看看回显：
+1?id=1
+
+发现页面显示正常。接着判断是否存在注入点：
+1?id=1&#x27; and 1=1 -- q
+
+页面显示正常，接着：
+1?id=1&#x27; and 1=2 -- q
+
+然后页面就报错：
+
+证明存在注入点。
+开始判断字段数：
+1234?id=1&#x27; order by 1 -- q?id=1&#x27; order by 2 -- q?id=1&#x27; order by 3 -- q?id=1&#x27; order by 4 -- q
+
+发现判断到4的时候页面报错，证明字段数应该只有3位。
+开始判断显错位：
+1?id=100&#x27; union select 1,2,3 -- q
+
+注意，这里为什么要将1改为100，是为了成功执行我们的联合查询中的显错位，这里的id不存在100位这么多，就会将后面的联合查询中的1，2，3，显示出来。
+得到回显：
+
+可以发现我们可以控制2，3出现的位置，那么开始判断库名：
+1?id=100&#x27; union select 1 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/06/12/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-14/" title="反序列化-14"><img class="post-bg" src="/img/03.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="反序列化-14"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/12/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-14/" title="反序列化-14">反序列化-14</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-06-12T09:15:28.000Z" title="Created 2023-06-12 17:15:28">2023-06-12</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-06-12T09:24:33.503Z" title="Updated 2023-06-12 17:24:33">2023-06-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web/">Web</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96wp/">反序列化wp</a></span></div><div class="content">题目来源：CTFshow web入门-php反序列化-268打开环境，发现和上一题具有异曲同工之妙，冲服上一题的步骤，发现一直写入不成功，可能是这条链子被过滤，因此我们换一条链子试试看：
+1234567891011121314151617181920212223242526272829303132333435363738&lt;?php namespace yii\rest&#123;    class IndexAction&#123;        public $checkAccess;        public $id;        public function __construct($func, $param)&#123;            $this-&gt;checkAccess = $func;            $this-&gt;id = $param;        &#125;    &#125;&#125;namespace yii\web&#123;    abstract class MultiFieldSession&#123;      ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/06/12/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-13/" title="反序列化-13"><img class="post-bg" src="/img/03.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="反序列化-13"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/12/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-13/" title="反序列化-13">反序列化-13</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-06-12T07:58:39.000Z" title="Created 2023-06-12 15:58:39">2023-06-12</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-06-12T08:31:36.068Z" title="Updated 2023-06-12 16:31:36">2023-06-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web/">Web</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96wp/">反序列化wp</a></span></div><div class="content">题目来源：CTFshow web入门-php反序列化-267打开环境，发现值一个有模有样的界面，找到一个登录界面，尝试使用弱密码后得到账户和密码：admin，admin。登录成功后，查看源码，发现代码块与之前不一样了，多了一个   。将其加入url中得到：
+12///backdoor/shellunserialize(base64_decode($_GET[&#x27;code&#x27;]))
+
+则这里就是我们序列化利用的点。再分析源码，发现网页使用的js框架结构是 yii 框架，打开查看版本是2.0 版本，于是可以到网上查找这个框架的链子：
+123456789101112131415161718192021222324252627282930313233343536373839&lt;?phpnamespace yii\rest&#123;    class CreateAction&#123;        public $checkAccess;        public $id;                    public function __construct( ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/06/12/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-12/" title="反序列化-12"><img class="post-bg" src="/img/01.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="反序列化-12"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/12/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-12/" title="反序列化-12">反序列化-12</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-06-12T07:27:23.000Z" title="Created 2023-06-12 15:27:23">2023-06-12</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-06-12T07:36:47.672Z" title="Updated 2023-06-12 15:36:47">2023-06-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web/">Web</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96wp/">反序列化wp</a></span></div><div class="content">题目来源：CTFshow web入门-php反序列化-266题目源码：
+1234567891011121314151617181920212223242526272829303132&lt;?phphighlight_file(__FILE__);include(&#x27;flag.php&#x27;);$cs = file_get_contents(&#x27;php://input&#x27;);class ctfshow&#123;    public $username=&#x27;xxxxxx&#x27;;    public $password=&#x27;xxxxxx&#x27;;    public function __construct($u,$p)&#123;        $this-&gt;username=$u;        $this-&gt;password=$p;    &#125;    public function login()&#123;        return $this-&gt;username===$this-&gt;passw ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/06/12/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-11/" title="反序列化-11"><img class="post-bg" src="/img/01.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="反序列化-11"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/12/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-11/" title="反序列化-11">反序列化-11</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-06-12T06:57:17.000Z" title="Created 2023-06-12 14:57:17">2023-06-12</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-06-12T07:09:25.421Z" title="Updated 2023-06-12 15:09:25">2023-06-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web/">Web</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96wp/">反序列化wp</a></span></div><div class="content">题目来源：CTFshow web入门-php反序列化-265题目源码：
+12345678910111213141516171819202122232425262728&lt;?phperror_reporting(0);include(&#x27;flag.php&#x27;);highlight_file(__FILE__);class ctfshowAdmin&#123;    public $token;    public $password;    public function __construct($t,$p)&#123;        $this-&gt;token=$t;        $this-&gt;password = $p;    &#125;    public function login()&#123;        return $this-&gt;token===$this-&gt;password;    &#125;&#125;$ctfshow = unserialize($_GET[&#x27;ctfshow&#x27;]);$ctfsho ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/06/11/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-10/" title="反序列化-10"><img class="post-bg" src="/img/01.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="反序列化-10"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/11/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-10/" title="反序列化-10">反序列化-10</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-06-11T08:50:51.000Z" title="Created 2023-06-11 16:50:51">2023-06-11</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-06-11T09:03:19.152Z" title="Updated 2023-06-11 17:03:19">2023-06-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web/">Web</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96wp/">反序列化wp</a></span></div><div class="content">题目来源：CTFshow web入门-php反序列化-264题目源码：
+12345678910111213141516171819202122232425262728293031&lt;?phperror_reporting(0);session_start();class message&#123;    public $from;    public $msg;    public $to;    public $token=&#x27;user&#x27;;    public function __construct($f,$m,$t)&#123;        $this-&gt;from = $f;        $this-&gt;msg = $m;        $this-&gt;to = $t;    &#125;&#125;$f = $_GET[&#x27;f&#x27;];$m = $_GET[&#x27;m&#x27;];$t = $_GET[&#x27;t&#x27;];if(isset($f) &amp;&amp; isset($m) &amp;&amp; ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/06/11/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-9/" title="反序列化-9"><img class="post-bg" src="/img/05.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="反序列化-9"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/11/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-9/" title="反序列化-9">反序列化-9</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-06-11T02:43:01.000Z" title="Created 2023-06-11 10:43:01">2023-06-11</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-06-11T09:04:14.857Z" title="Updated 2023-06-11 17:04:14">2023-06-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web/">Web</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96wp/">反序列化wp</a></span></div><div class="content">题目来源：CTFshow web入门-php反序列化-263打开环境，发现是一个登录页面，找不到序列化利用的点，用扫描工具（disearch）扫描一下环境:
+
+发现环境中有一个 www.zip 资源，直接输入url下载下来，打开发现有许多php代码页，搜寻关键源码：
+index.php 源码：
+123456789101112131415&lt;?php    	error_reporting(0);	session_start();	//超过5次禁止登陆	if(isset($_SESSION[&#x27;limit&#x27;]))&#123;		$_SESSION[&#x27;limti&#x27;]&gt;5?die(&quot;登陆失败次数超过限制&quot;):$_SESSION[&#x27;limit&#x27;]=base64_decode($_COOKIE[&#x27;limit&#x27;]);		$_COOKIE[&#x27;limit&#x27;] = base64_encode(base64_decode($_COOKIE[&#x27;limit&#x27;])  ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">fp.close()</div><div class="author-info__description">演示博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/asjfbnai"><i class="fab fa-github"></i><span>一起加油,一起进步!</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/asjfbnai" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">欢迎来到我的博客!</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/09/10/2023/" title="第一篇文章"><img src="/img/04.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第一篇文章"/></a><div class="content"><a class="title" href="/2023/09/10/2023/" title="第一篇文章">第一篇文章</a><time datetime="2023-09-10T09:11:55.612Z" title="Created 2023-09-10 17:11:55">2023-09-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/08/12/web%E6%B8%97%E9%80%8F-php/" title="web渗透"><img src="/img/05.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="web渗透"/></a><div class="content"><a class="title" href="/2023/08/12/web%E6%B8%97%E9%80%8F-php/" title="web渗透">web渗透</a><time datetime="2023-08-12T06:21:51.000Z" title="Created 2023-08-12 14:21:51">2023-08-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/18/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95-%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D/" title="渗透测试-永恒之蓝"><img src="/img/05.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="渗透测试-永恒之蓝"/></a><div class="content"><a class="title" href="/2023/07/18/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95-%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D/" title="渗透测试-永恒之蓝">渗透测试-永恒之蓝</a><time datetime="2023-07-18T04:03:07.000Z" title="Created 2023-07-18 12:03:07">2023-07-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/17/SQL-sqli/" title="SQL-sqli"><img src="/img/06.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SQL-sqli"/></a><div class="content"><a class="title" href="/2023/06/17/SQL-sqli/" title="SQL-sqli">SQL-sqli</a><time datetime="2023-06-17T09:10:41.000Z" title="Created 2023-06-17 17:10:41">2023-06-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/12/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-14/" title="反序列化-14"><img src="/img/03.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="反序列化-14"/></a><div class="content"><a class="title" href="/2023/06/12/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-14/" title="反序列化-14">反序列化-14</a><time datetime="2023-06-12T09:15:28.000Z" title="Created 2023-06-12 17:15:28">2023-06-12</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Python/"><span class="card-category-list-name">Python</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Web/"><span class="card-category-list-name">Web</span><span class="card-category-list-count">16</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Web%E5%AE%89%E5%85%A8/"><span class="card-category-list-name">Web安全</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Web%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"><span class="card-category-list-name">Web渗透测试</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/PHP%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" style="font-size: 1.1em; color: #999">PHP漏洞利用</a> <a href="/tags/%E6%B8%97%E9%80%8F/" style="font-size: 1.1em; color: #999">渗透</a> <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="font-size: 1.1em; color: #999">SQL注入</a> <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96wp/" style="font-size: 1.5em; color: #99a9bf">反序列化wp</a> <a href="/tags/%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D/" style="font-size: 1.1em; color: #999">永恒之蓝</a> <a href="/tags/Python-%E6%AD%A3%E5%88%99/" style="font-size: 1.1em; color: #999">Python-正则</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">September 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">August 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">July 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">June 2023</span><span class="card-archive-list-count">17</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">20</div></div><div class="webinfo-item"><div class="item-name">Run time :</div><div class="item-count" id="runtimeshow" data-publishDate="2023-09-10T07:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-09-11T06:50:23.007Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/bj.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2023 By fp.close()</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = []
+        sub.unshift(data.hitokoto, from)
+        typedJSFn.init(sub)
+      } else {
+        document.getElementById('subtitle').textContent = data.hitokoto
+      }
+    })
+}
+typedJSFn.run(subtitleType)
+</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="299" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body></html>
